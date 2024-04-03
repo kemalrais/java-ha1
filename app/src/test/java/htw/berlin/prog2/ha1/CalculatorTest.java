@@ -122,5 +122,22 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("should display result after pressing percentage symbol before pressing equals key")
+    void testPercentageFunctionality(){
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(5);
+        calc.pressBinaryOperationKey("x");
+        calc.pressDigitKey(5);
+        calc.pressUnaryOperationKey("%");
+        calc.pressEqualsKey();
+
+        String expected = "1.25";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
 }
 
