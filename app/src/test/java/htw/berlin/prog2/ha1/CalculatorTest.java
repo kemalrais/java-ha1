@@ -90,7 +90,7 @@ class CalculatorTest {
 
     //regression: green test with existing implementation
     @Test
-    @DisplayName("should display zero after substracting one with one")
+    @DisplayName("should display zero after subtracting one with one")
     void testSubstraction(){
         Calculator calc = new Calculator();
 
@@ -105,10 +105,10 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
-    //test-driven: red test with existing implementation
+    //test-driven: first red test with existing implementation
     @Test
-    @DisplayName("should display negative decimal number after postive number with negative number")
-    void testPressingClearKey(){
+    @DisplayName("should display result regarding pressing negative key after pressing operation key")
+    void testOperationWithNegativeKey(){
         Calculator calc = new Calculator();
 
         calc.pressDigitKey(1);
@@ -123,6 +123,7 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
+    //test-driven: second red test with existing implementation
     @Test
     @DisplayName("should display result after pressing percentage symbol before pressing equals key")
     void testPercentageFunctionality(){

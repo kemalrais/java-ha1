@@ -31,6 +31,7 @@ public class Calculator {
     public void pressDigitKey(int digit) {
         if(digit > 9 || digit < 0) throw new IllegalArgumentException();
 
+        //if screen start with "-0" -> no implementation -> then
         if(screen.equals("0") || latestValue == Double.parseDouble(screen)) screen = "";
 
         screen = screen + digit;
@@ -105,8 +106,16 @@ public class Calculator {
      * entfernt und der Inhalt fortan als positiv interpretiert.
      */
     public void pressNegativeKey() {
-        screen = screen.startsWith("-") ? screen.substring(1) : "-" + screen;
+        //the value should be '-0' after pressing Operation Key -> no implementation
+        if (screen.startsWith("-")) {
+            screen.substring(1);
+        } else if (latestOperation.isEmpty()){
+            screen = "-" + screen;
+            } else {
+            screen = "-" + "0";
+        }
     }
+
 
     /**
      * Empfängt den Befehl der gedrückten "="-Taste.
