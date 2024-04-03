@@ -104,5 +104,23 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
+
+    //test-driven: red test with existing implementation
+    @Test
+    @DisplayName("should display negative decimal number after postive number with negative number")
+    void testPressingClearKey(){
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(1);
+        calc.pressBinaryOperationKey("/");
+        calc.pressNegativeKey();
+        calc.pressDigitKey(2);
+        calc.pressEqualsKey();
+
+        String expected = "-0.5";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
 }
 
