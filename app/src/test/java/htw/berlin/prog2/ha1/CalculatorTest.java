@@ -133,7 +133,7 @@ class CalculatorTest {
         calc.pressUnaryOperationKey("%");
         calc.pressEqualsKey();
 
-        String expected = "0.05g";
+        String expected = "0.05";
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
